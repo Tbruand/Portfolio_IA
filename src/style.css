@@ -27,3 +27,25 @@
 .animate-bounce {
   animation: bounce 1.5s infinite;
 }
+
+/* Personnalisation des tables dans les modales */
+
+.table-header {
+  background-color: #e5e7eb; /* Light gray */
+  font-weight: bold;
+}
+.table-header.dark {
+  background-color: #374151; /* Dark gray */
+}
+.table-row:nth-child(even) {
+  background-color: #f9fafb; /* Lighter gray for even rows */
+}
+.table-row:nth-child(odd) {
+  background-color: #ffffff; /* White for odd rows */
+}
+.table-row.dark:nth-child(even) {
+  background-color: #1f2937; /* Darker gray for even rows in dark mode */
+}
+.table-row.dark:nth-child(odd) {
+  background-color: #111827; /* Darkest gray for odd rows in dark mode */
+}
