@@ -3,7 +3,8 @@
     "id": 1,
     "title": "Types d'algorithmes d'apprentissage",
     "tags": ["IA", "Cours"],
-    "image": "./assets/img/placeholder.webp",
+    "image": "./assets/img/p1/p1_banner.jpg",
+    "disclaimer": "🚨 Contenu en français et anglais, meilleur pour l'apprentissage des termes IA. 🚨",
     "introduction": "L'intelligence artificielle (IA) repose sur divers types d'algorithmes d'apprentissage, chacun adapté à des tâches spécifiques. Les principales catégories sont le **supervised learning**, le **unsupervised learning** et le **reinforcement learning**.",
     "categories": [
       {
@@ -25,7 +26,7 @@
               },
               {
                 "type": "littletitle",
-                "content": "**Data** :"
+                "content": "Data :"
               },
               {
                 "type": "table",
@@ -38,6 +39,10 @@
                     ["Compte-rendu de la réunion", "0"]
                   ]
                 }
+              },
+              {
+                "type": "liengithub",
+                "content": "https://github.com/Tbruand/Projet_python_portfolio/tree/main/cours_pratique/supervised_learning/classification"
               },
               {
                 "type": "subtext",
@@ -59,7 +64,7 @@
               },
               {
                 "type": "littletitle",
-                "content": "**Data** :"
+                "content": "Data :"
               },
               {
                 "type": "table",
@@ -72,6 +77,10 @@
                     ["100", "3", "Periphery", "220,000"]
                   ]
                 }
+              },
+              {
+                "type": "liengithub",
+                "content": "https://github.com/Tbruand/Projet_python_portfolio/tree/main/cours_pratique/supervised_learning/regression"
               },
               {
                 "type": "subtext",
@@ -100,7 +109,7 @@
               },
               {
                 "type": "littletitle",
-                "content": "**Data** :"
+                "content": "Data :"
               },
               {
                 "type": "table",
@@ -114,6 +123,10 @@
                   ]
                 }
               },
+              {
+                "type": "liengithub",
+                "content": "https://github.com/Tbruand/Projet_python_portfolio/tree/main/cours_pratique/unsupervised_learning/clustering"
+              }, 
               {
                 "type": "subtext",
                 "content": "**Algorithmes courants** : K-means, Hierarchical clustering, DBSCAN."
@@ -133,6 +146,14 @@
                 "content": "**Exemple** : Réduire les **features** d'images pour faciliter leur **classification**."
               },
               {
+                "type": "img",
+                "content": "./assets/img/p1/PCA_2D.png"
+              },
+              {
+                "type": "liengithub",
+                "content": "https://github.com/Tbruand/Projet_python_portfolio/tree/main/cours_pratique/unsupervised_learning/dimensionality_reduction"
+              },   
+              {
                 "type": "subtext",
                 "content": "**Algorithmes courants** : Principal Component Analysis (PCA), t-SNE, Autoencoders."
               }
@@ -151,7 +172,7 @@
               },
               {
                 "type": "littletitle",
-                "content": "**Data** :"
+                "content": "Data :"
               },
               {
                 "type": "firstline",
@@ -176,6 +197,10 @@
               {
                 "type": "secondline",
                 "content": "  -10 pour heurter un obstacle."
+              },
+              {
+                "type": "img",
+                "content": "./assets/img/p1/agent.gif"
               }, 
               {
                 "type": "subtext",
