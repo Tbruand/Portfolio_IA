@@ -5,6 +5,8 @@ import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Modal from "./components/Modal";
+import projectsData from "./projects.json";
 
 const App = () => {
   // État du mode sombre
@@ -15,13 +17,15 @@ const App = () => {
     }
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
+
   const [activeSection, setActiveSection] = useState("");
   const [selectedTags, setSelectedTags] = useState(["ALL"]);
   const [filteredProjects, setFilteredProjects] = useState([]);
+  const [selectedProject, setSelectedProject] = useState(null); // Projet sélectionné pour la modale
 
   const tags = ["ALL", "Web", "IA", "Python", "Cours"];
 
-  // Applique automatiquement le mode sombre ou clair en fonction de l'état
+  // Gestion du mode sombre
   useEffect(() => {
     localStorage.setItem("darkMode", darkMode);
     const rootElement = document.getElementById("root");
@@ -31,7 +35,8 @@ const App = () => {
       rootElement.classList.remove("dark");
     }
   }, [darkMode]);
-  // Écoute les changements de préférence système et met à jour l'état
+
+  // Écoute les changements de préférence système
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = () => {
@@ -42,26 +47,20 @@ const App = () => {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // Filtrer les projets en fonction des tags sélectionnés
   useEffect(() => {
-    const projects = [
-      { id: 1, title: "Portfolio Website", tags: ["Web", "Python"] },
-      { id: 2, title: "AI Cancer Detection", tags: ["IA", "Python"] },
-      { id: 3, title: "E-commerce Platform", tags: ["Web"] },
-      { id: 4, title: "Math Lessons App", tags: ["Cours", "Python"] },
-      { id: 5, title: "ChatGPT Clone", tags: ["IA", "Web"] },
-    ];
     if (selectedTags.includes("ALL")) {
-      setFilteredProjects(projects);
+      setFilteredProjects(projectsData);
     } else {
       setFilteredProjects(
-        projects.filter((project) =>
+        projectsData.filter((project) =>
           selectedTags.every((tag) => project.tags.includes(tag))
         )
       );
     }
   }, [selectedTags]);
 
+  // Gérer l'observation des sections pour activer le scrollspy
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(
@@ -82,8 +81,10 @@ const App = () => {
     };
   }, []);
 
-  // Fonction pour basculer manuellement entre le mode sombre et clair
+  // Basculer entre les modes sombre et clair
   const toggleDarkMode = () => setDarkMode((prev) => !prev);
+
+  // Basculer les tags sélectionnés
   const toggleTag = (tag) => {
     if (tag === "ALL") setSelectedTags(["ALL"]);
     else {
@@ -109,9 +110,15 @@ const App = () => {
         selectedTags={selectedTags}
         toggleTag={toggleTag}
         filteredProjects={filteredProjects}
+        onProjectClick={setSelectedProject} // Gérer le clic pour ouvrir une modale
       />
       <Contact />
       <Footer />
+      {/* Modale pour afficher les détails du projet */}
+      <Modal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </div>
   );
 };
