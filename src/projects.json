@@ -1,0 +1,382 @@
+[
+    {
+    "id": 1,
+    "title": "Types d'algorithmes d'apprentissage",
+    "tags": ["IA", "Cours"],
+    "image": "./assets/img/placeholder.webp",
+    "introduction": "L'intelligence artificielle (IA) repose sur divers types d'algorithmes d'apprentissage, chacun adapté à des tâches spécifiques. Les principales catégories sont le **supervised learning**, le **unsupervised learning** et le **reinforcement learning**.",
+    "categories": [
+      {
+        "type": "category",
+        "title": "Supervised learning",
+        "description":"Dans le **supervised learning**, le **model** est entraîné sur des **labeled data**, c'est-à-dire que chaque **input** est associé à une **target** connue. L'objectif est d'apprendre une **function** qui mappe les **inputs** aux **targets** correspondantes, permettant ainsi de faire des **predictions** sur de nouvelles **data**. Les principales tâches du **supervised learning** sont la **classification** et la **regression**.",
+        "subcategories": [
+          {
+            "type": "subcategory",
+            "title": "Classification",
+            "sections": [
+              {
+                "type": "text",
+                "content": "Attribuer une **category** ou une **class** à une **input**."
+              },
+              {
+                "type": "subtext",
+                "content": "**Exemple** : Prédire si un e-mail est un spam ou non en fonction de ses **features** (présence de certains mots, longueur du message, etc.)."
+              },
+              {
+                "type": "littletitle",
+                "content": "**Data** :"
+              },
+              {
+                "type": "table",
+                "content": {
+                  "headers": ["E-mail", "Spam (1) / Non-spam (0)"],
+                  "rows": [
+                    ["Gagnez de l'argent rapidement", "1"],
+                    ["Réunion demain à 10h", "0"],
+                    ["Offre spéciale pour vous", "1"],
+                    ["Compte-rendu de la réunion", "0"]
+                  ]
+                }
+              },
+              {
+                "type": "subtext",
+                "content": "**Algorithmes courants** : Logistic regression, Decision trees, Support Vector Machines (SVMs)."
+              }
+            ]
+          },
+          {
+            "type": "subcategory",
+            "title": "Regression",
+            "sections": [
+              {
+                "type": "text",
+                "content": "Prédire une **numerical value** continue à partir des **inputs**."
+              },
+              {
+                "type": "subtext",
+                "content": "**Exemple** : Estimer le prix d'une maison en fonction de sa **area**, du nombre de **rooms**, de l'**location**, etc."
+              },
+              {
+                "type": "littletitle",
+                "content": "**Data** :"
+              },
+              {
+                "type": "table",
+                "content": {
+                  "headers": ["Area (m²)", "Rooms", "Location", "Price (€)"],
+                  "rows": [
+                    ["80", "2", "City center", "200,000"],
+                    ["120", "3", "Suburb", "250,000"],
+                    ["60", "1", "City center", "150,000"],
+                    ["100", "3", "Periphery", "220,000"]
+                  ]
+                }
+              },
+              {
+                "type": "subtext",
+                "content": "**Algorithmes courants** : Linear regression, Random forest regression, Neural networks."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "title": "Unsupervised learning",
+        "description":"Le **unsupervised learning** implique des **unlabeled data**, c'est-à-dire sans **targets** connues. Le **model** doit identifier des **patterns** ou des **hidden structures** dans les **data**. Les principales tâches sont le **clustering** et la **dimensionality reduction**.",
+        "subcategories": [
+          {
+            "type": "subcategory",
+            "title": "Clustering",
+            "sections": [
+              {
+                "type": "text",
+                "content": "Regrouper des **data** similaires en **clusters** ou **groups**."
+              },
+              {
+                "type": "subtext",
+                "content": "**Exemple** : Segmenter des clients en fonction de leurs comportements d'achat pour des campagnes marketing ciblées."
+              },
+              {
+                "type": "littletitle",
+                "content": "**Data** :"
+              },
+              {
+                "type": "table",
+                "content": {
+                  "headers": ["Client", "Age", "Purchase frequency", "Average spend (€)"],
+                  "rows": [
+                    ["A", "25", "5", "20"],
+                    ["B", "40", "2", "50"],
+                    ["C", "30", "10", "15"],
+                    ["D", "35", "4", "30"]
+                  ]
+                }
+              },
+              {
+                "type": "subtext",
+                "content": "**Algorithmes courants** : K-means, Hierarchical clustering, DBSCAN."
+              }
+            ]
+          },
+          {
+            "type": "subcategory",
+            "title": "Dimensionality reduction",
+            "sections": [
+              {
+                "type": "text",
+                "content": "Simplifier les **data** en réduisant le nombre de **features** tout en conservant l'essentiel de l'information."
+              },
+              {
+                "type": "subtext",
+                "content": "**Exemple** : Réduire les **features** d'images pour faciliter leur **classification**."
+              },
+              {
+                "type": "subtext",
+                "content": "**Algorithmes courants** : Principal Component Analysis (PCA), t-SNE, Autoencoders."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "title": "Reinforcement learning",
+        "description":"Le **reinforcement learning** implique un **agent** qui apprend à prendre des décisions en interagissant avec un **environment**, en recevant des **rewards** ou des **penalties** en fonction de ses **actions**. L'objectif est de maximiser la **cumulative reward** sur le long terme.",
+        "sections": [
+              {
+                "type": "subtext",
+                "content": "**Exemple** : Un robot qui apprend à naviguer dans un labyrinthe pour atteindre une sortie en évitant les obstacles."
+              },
+              {
+                "type": "littletitle",
+                "content": "**Data** :"
+              },
+              {
+                "type": "firstline",
+                "content": "**States** : Positions possibles du robot dans le labyrinthe."
+              },
+              {
+                "type": "firstline",
+                "content": "**Actions** : Déplacements possibles (haut, bas, gauche, droite)."
+              },
+              {
+                "type": "firstline",
+                "content": "**Rewards** :"
+              },
+              {
+                "type": "secondline",
+                "content": "  +10 pour atteindre la sortie."
+              },
+              {
+                "type": "secondline",
+                "content": "  -1 pour chaque mouvement."
+              },
+              {
+                "type": "secondline",
+                "content": "  -10 pour heurter un obstacle."
+              }, 
+              {
+                "type": "subtext",
+                "content": "**Algorithmes courants** : Q-learning, Deep Q-Networks (DQN), Policy gradients."
+              },
+              {
+                "type": "text",
+                "content": "Chaque type d'apprentissage est adapté à des situations spécifiques et le choix de l'algorithme dépend de la nature des **data** et des objectifs poursuivis."
+              }
+            ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Types d'algorithmes d'apprentissage",
+    "tags": ["IA", "Cours"],
+    "image": "./assets/img/placeholder.webp",
+    "introduction": "L'intelligence artificielle (IA) repose sur divers types d'algorithmes d'apprentissage, chacun adapté à des tâches spécifiques. Les principales catégories sont le **supervised learning**, le **unsupervised learning** et le **reinforcement learning**.",
+    "categories": [
+      {
+        "type": "category",
+        "title": "Supervised learning",
+        "description":"Dans le **supervised learning**, le **model** est entraîné sur des **labeled data**, c'est-à-dire que chaque **input** est associé à une **target** connue. L'objectif est d'apprendre une **function** qui mappe les **inputs** aux **targets** correspondantes, permettant ainsi de faire des **predictions** sur de nouvelles **data**. Les principales tâches du **supervised learning** sont la **classification** et la **regression**.",
+        "subcategories": [
+          {
+            "type": "subcategory",
+            "title": "Classification",
+            "sections": [
+              {
+                "type": "text",
+                "content": "Attribuer une **category** ou une **class** à une **input**."
+              },
+              {
+                "type": "subtext",
+                "content": "**Exemple** : Prédire si un e-mail est un spam ou non en fonction de ses **features** (présence de certains mots, longueur du message, etc.)."
+              },
+              {
+                "type": "littletitle",
+                "content": "**Data** :"
+              },
+              {
+                "type": "table",
+                "content": {
+                  "headers": ["E-mail", "Spam (1) / Non-spam (0)"],
+                  "rows": [
+                    ["Gagnez de l'argent rapidement", "1"],
+                    ["Réunion demain à 10h", "0"],
+                    ["Offre spéciale pour vous", "1"],
+                    ["Compte-rendu de la réunion", "0"]
+                  ]
+                }
+              },
+              {
+                "type": "subtext",
+                "content": "**Algorithmes courants** : Logistic regression, Decision trees, Support Vector Machines (SVMs)."
+              }
+            ]
+          },
+          {
+            "type": "subcategory",
+            "title": "Regression",
+            "sections": [
+              {
+                "type": "text",
+                "content": "Prédire une **numerical value** continue à partir des **inputs**."
+              },
+              {
+                "type": "subtext",
+                "content": "**Exemple** : Estimer le prix d'une maison en fonction de sa **area**, du nombre de **rooms**, de l'**location**, etc."
+              },
+              {
+                "type": "littletitle",
+                "content": "**Data** :"
+              },
+              {
+                "type": "table",
+                "content": {
+                  "headers": ["Area (m²)", "Rooms", "Location", "Price (€)"],
+                  "rows": [
+                    ["80", "2", "City center", "200,000"],
+                    ["120", "3", "Suburb", "250,000"],
+                    ["60", "1", "City center", "150,000"],
+                    ["100", "3", "Periphery", "220,000"]
+                  ]
+                }
+              },
+              {
+                "type": "subtext",
+                "content": "**Algorithmes courants** : Linear regression, Random forest regression, Neural networks."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "title": "Unsupervised learning",
+        "description":"Le **unsupervised learning** implique des **unlabeled data**, c'est-à-dire sans **targets** connues. Le **model** doit identifier des **patterns** ou des **hidden structures** dans les **data**. Les principales tâches sont le **clustering** et la **dimensionality reduction**.",
+        "subcategories": [
+          {
+            "type": "subcategory",
+            "title": "Clustering",
+            "sections": [
+              {
+                "type": "text",
+                "content": "Regrouper des **data** similaires en **clusters** ou **groups**."
+              },
+              {
+                "type": "subtext",
+                "content": "**Exemple** : Segmenter des clients en fonction de leurs comportements d'achat pour des campagnes marketing ciblées."
+              },
+              {
+                "type": "littletitle",
+                "content": "**Data** :"
+              },
+              {
+                "type": "table",
+                "content": {
+                  "headers": ["Client", "Age", "Purchase frequency", "Average spend (€)"],
+                  "rows": [
+                    ["A", "25", "5", "20"],
+                    ["B", "40", "2", "50"],
+                    ["C", "30", "10", "15"],
+                    ["D", "35", "4", "30"]
+                  ]
+                }
+              },
+              {
+                "type": "subtext",
+                "content": "**Algorithmes courants** : K-means, Hierarchical clustering, DBSCAN."
+              }
+            ]
+          },
+          {
+            "type": "subcategory",
+            "title": "Dimensionality reduction",
+            "sections": [
+              {
+                "type": "text",
+                "content": "Simplifier les **data** en réduisant le nombre de **features** tout en conservant l'essentiel de l'information."
+              },
+              {
+                "type": "subtext",
+                "content": "**Exemple** : Réduire les **features** d'images pour faciliter leur **classification**."
+              },
+              {
+                "type": "subtext",
+                "content": "**Algorithmes courants** : Principal Component Analysis (PCA), t-SNE, Autoencoders."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "title": "Reinforcement learning",
+        "description":"Le **reinforcement learning** implique un **agent** qui apprend à prendre des décisions en interagissant avec un **environment**, en recevant des **rewards** ou des **penalties** en fonction de ses **actions**. L'objectif est de maximiser la **cumulative reward** sur le long terme.",
+        "sections": [
+              {
+                "type": "subtext",
+                "content": "**Exemple** : Un robot qui apprend à naviguer dans un labyrinthe pour atteindre une sortie en évitant les obstacles."
+              },
+              {
+                "type": "littletitle",
+                "content": "**Data** :"
+              },
+              {
+                "type": "firstline",
+                "content": "**States** : Positions possibles du robot dans le labyrinthe."
+              },
+              {
+                "type": "firstline",
+                "content": "**Actions** : Déplacements possibles (haut, bas, gauche, droite)."
+              },
+              {
+                "type": "firstline",
+                "content": "**Rewards** :"
+              },
+              {
+                "type": "secondline",
+                "content": "  +10 pour atteindre la sortie."
+              },
+              {
+                "type": "secondline",
+                "content": "  -1 pour chaque mouvement."
+              },
+              {
+                "type": "secondline",
+                "content": "  -10 pour heurter un obstacle."
+              }, 
+              {
+                "type": "subtext",
+                "content": "**Algorithmes courants** : Q-learning, Deep Q-Networks (DQN), Policy gradients."
+              },
+              {
+                "type": "text",
+                "content": "Chaque type d'apprentissage est adapté à des situations spécifiques et le choix de l'algorithme dépend de la nature des **data** et des objectifs poursuivis."
+              }
+            ]
+      }
+    ]
+  }
+]    
