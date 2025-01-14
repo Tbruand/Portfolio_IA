@@ -23,7 +23,7 @@ const App = () => {
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null); // Projet sélectionné pour la modale
 
-  const tags = ["ALL", "Web", "IA", "Python", "Cours"];
+  const tags = ["ALL", "Web", "IA", "Python", "Cours", "Article"];
 
   // Gestion du mode sombre
   useEffect(() => {
