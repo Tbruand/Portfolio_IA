@@ -216,190 +216,172 @@
   },
   {
     "id": 2,
-    "title": "Types d'algorithmes d'apprentissage",
-    "tags": ["IA", "Cours"],
+    "title": "L'IA : pourquoi il ne faut pas en avoir peur ?",
+    "tags": ["IA", "Article"],
     "image": "./assets/img/placeholder.webp",
-    "introduction": "L'intelligence artificielle (IA) repose sur divers types d'algorithmes d'apprentissage, chacun adapté à des tâches spécifiques. Les principales catégories sont le **supervised learning**, le **unsupervised learning** et le **reinforcement learning**.",
+    "introduction": "Depuis plusieurs années, l'**intelligence artificielle (IA)** occupe une place de plus en plus importante dans nos vies quotidiennes. Des assistants virtuels comme Siri et Alexa aux voitures autonomes en passant par les recommandations de contenus sur les plateformes de streaming, l'IA semble être partout. Pourtant, malgré ses nombreux avantages, elle suscite aussi des peurs et des interrogations. Ces craintes, souvent exagérées par les représentations cinématographiques et littéraires, peuvent être apaisées en comprenant mieux la nature, les limites et les potentialités de l'intelligence artificielle.",
     "categories": [
       {
         "type": "category",
-        "title": "Supervised learning",
-        "description":"Dans le **supervised learning**, le **model** est entraîné sur des **labeled data**, c'est-à-dire que chaque **input** est associé à une **target** connue. L'objectif est d'apprendre une **function** qui mappe les **inputs** aux **targets** correspondantes, permettant ainsi de faire des **predictions** sur de nouvelles **data**. Les principales tâches du **supervised learning** sont la **classification** et la **regression**.",
-        "subcategories": [
-          {
-            "type": "subcategory",
-            "title": "Classification",
-            "sections": [
-              {
-                "type": "text",
-                "content": "Attribuer une **category** ou une **class** à une **input**."
-              },
-              {
-                "type": "subtext",
-                "content": "**Exemple** : Prédire si un e-mail est un spam ou non en fonction de ses **features** (présence de certains mots, longueur du message, etc.)."
-              },
-              {
-                "type": "littletitle",
-                "content": "**Data** :"
-              },
-              {
-                "type": "table",
-                "content": {
-                  "headers": ["E-mail", "Spam (1) / Non-spam (0)"],
-                  "rows": [
-                    ["Gagnez de l'argent rapidement", "1"],
-                    ["Réunion demain à 10h", "0"],
-                    ["Offre spéciale pour vous", "1"],
-                    ["Compte-rendu de la réunion", "0"]
-                  ]
-                }
-              },
-              {
-                "type": "subtext",
-                "content": "**Algorithmes courants** : Logistic regression, Decision trees, Support Vector Machines (SVMs)."
-              }
-            ]
-          },
-          {
-            "type": "subcategory",
-            "title": "Regression",
-            "sections": [
-              {
-                "type": "text",
-                "content": "Prédire une **numerical value** continue à partir des **inputs**."
-              },
-              {
-                "type": "subtext",
-                "content": "**Exemple** : Estimer le prix d'une maison en fonction de sa **area**, du nombre de **rooms**, de l'**location**, etc."
-              },
-              {
-                "type": "littletitle",
-                "content": "**Data** :"
-              },
-              {
-                "type": "table",
-                "content": {
-                  "headers": ["Area (m²)", "Rooms", "Location", "Price (€)"],
-                  "rows": [
-                    ["80", "2", "City center", "200,000"],
-                    ["120", "3", "Suburb", "250,000"],
-                    ["60", "1", "City center", "150,000"],
-                    ["100", "3", "Periphery", "220,000"]
-                  ]
-                }
-              },
-              {
-                "type": "subtext",
-                "content": "**Algorithmes courants** : Linear regression, Random forest regression, Neural networks."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "category",
-        "title": "Unsupervised learning",
-        "description":"Le **unsupervised learning** implique des **unlabeled data**, c'est-à-dire sans **targets** connues. Le **model** doit identifier des **patterns** ou des **hidden structures** dans les **data**. Les principales tâches sont le **clustering** et la **dimensionality reduction**.",
-        "subcategories": [
-          {
-            "type": "subcategory",
-            "title": "Clustering",
-            "sections": [
-              {
-                "type": "text",
-                "content": "Regrouper des **data** similaires en **clusters** ou **groups**."
-              },
-              {
-                "type": "subtext",
-                "content": "**Exemple** : Segmenter des clients en fonction de leurs comportements d'achat pour des campagnes marketing ciblées."
-              },
-              {
-                "type": "littletitle",
-                "content": "**Data** :"
-              },
-              {
-                "type": "table",
-                "content": {
-                  "headers": ["Client", "Age", "Purchase frequency", "Average spend (€)"],
-                  "rows": [
-                    ["A", "25", "5", "20"],
-                    ["B", "40", "2", "50"],
-                    ["C", "30", "10", "15"],
-                    ["D", "35", "4", "30"]
-                  ]
-                }
-              },
-              {
-                "type": "subtext",
-                "content": "**Algorithmes courants** : K-means, Hierarchical clustering, DBSCAN."
-              }
-            ]
-          },
-          {
-            "type": "subcategory",
-            "title": "Dimensionality reduction",
-            "sections": [
-              {
-                "type": "text",
-                "content": "Simplifier les **data** en réduisant le nombre de **features** tout en conservant l'essentiel de l'information."
-              },
-              {
-                "type": "subtext",
-                "content": "**Exemple** : Réduire les **features** d'images pour faciliter leur **classification**."
-              },
-              {
-                "type": "subtext",
-                "content": "**Algorithmes courants** : Principal Component Analysis (PCA), t-SNE, Autoencoders."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "category",
-        "title": "Reinforcement learning",
-        "description":"Le **reinforcement learning** implique un **agent** qui apprend à prendre des décisions en interagissant avec un **environment**, en recevant des **rewards** ou des **penalties** en fonction de ses **actions**. L'objectif est de maximiser la **cumulative reward** sur le long terme.",
+        "title": "Une technologie conçue pour aider",
+        "description":"",
         "sections": [
               {
-                "type": "subtext",
-                "content": "**Exemple** : Un robot qui apprend à naviguer dans un labyrinthe pour atteindre une sortie en évitant les obstacles."
-              },
-              {
-                "type": "littletitle",
-                "content": "**Data** :"
-              },
-              {
-                "type": "firstline",
-                "content": "**States** : Positions possibles du robot dans le labyrinthe."
-              },
-              {
-                "type": "firstline",
-                "content": "**Actions** : Déplacements possibles (haut, bas, gauche, droite)."
-              },
-              {
-                "type": "firstline",
-                "content": "**Rewards** :"
-              },
-              {
-                "type": "secondline",
-                "content": "  +10 pour atteindre la sortie."
-              },
-              {
-                "type": "secondline",
-                "content": "  -1 pour chaque mouvement."
-              },
-              {
-                "type": "secondline",
-                "content": "  -10 pour heurter un obstacle."
-              }, 
-              {
-                "type": "subtext",
-                "content": "**Algorithmes courants** : Q-learning, Deep Q-Networks (DQN), Policy gradients."
+                "type": "text",
+                "content": "L'objectif premier de l'IA est de **faciliter nos vies**. Elle est conçue pour accomplir des tâches spécifiques, souvent répétitives ou complexes, avec une efficacité accrue. Par exemple, dans le domaine médical, l'IA permet de détecter précocement certaines maladies, comme le cancer, grâce à l'**analyse d'images médicales**. Elle assiste les médecins, mais ne les remplace pas, car la décision finale revient toujours à l'humain."
               },
               {
                 "type": "text",
-                "content": "Chaque type d'apprentissage est adapté à des situations spécifiques et le choix de l'algorithme dépend de la nature des **data** et des objectifs poursuivis."
+                "content": "Dans l'industrie, l'IA **optimise les processus de production**, réduit les erreurs et augmente la productivité. Dans les transports, elle contribue à la sécurité routière grâce à des systèmes d'assistance à la conduite. Toutes ces avancées montrent que l'IA est conçue comme un outil au service de l'homme."
               }
+            ]
+      },
+      {
+        "type": "category",
+        "title": "Des peurs souvent infondées",
+        "description":"",
+        "sections": [
+              {
+                "type": "text",
+                "content": "Parmi les craintes récurrentes, on retrouve celle d'une IA incontrôlable qui dominerait l'humanité. Cette idée, popularisée par des films comme *Terminator*, repose davantage sur la fiction que sur la réalité. En effet, il est essentiel de distinguer l'IA \"faible\" et l'IA \"forte\". L'IA \"faible\", qui constitue la majorité des systèmes actuels, est conçue pour exécuter des tâches spécifiques, comme recommander un film ou analyser une image. Quant à l'IA \"forte\", qui pourrait théoriquement atteindre un niveau d'intelligence comparable à celui de l'humain, elle demeure un concept théorique, loin d'être réalisé. Ainsi, les systèmes actuels d'intelligence artificielle sont loin d'être autonomes : ils sont programmés pour des objectifs précis et opèrent sous le contrôle humain."
+              },
+              {
+                "type": "text",
+                "content": "Une autre peur concerne la perte d'emplois. Bien que certaines professions évoluent ou disparaissent, l'IA crée aussi de nouvelles opportunités. Des postes dans la data science, la robotique ou l'éthique numérique voient le jour, réclamant des compétences adaptées au monde en mutation."
+              }
+            ]
+      },
+      {
+        "type": "category",
+        "title": "Une éthique nécessaire",
+        "description":"",
+        "sections": [
+              {
+                "type": "text",
+                "content": "Pour garantir que l'IA reste bénéfique, il est essentiel de développer un cadre éthique. Cela inclut la **transparence des algorithmes**, le **respect de la vie privée** et l'**équité des décisions** prises par les systèmes automatisés. Des initiatives internationales, comme celles de l'UNESCO, visent à encadrer l'utilisation de l'intelligence artificielle afin d'éviter les abus."
+              }
+            ]
+      },
+      {
+        "type": "category",
+        "title": "L'importance de la pédagogie",
+        "description":"",
+        "sections": [
+              {
+                "type": "text",
+                "content": "La peur de l'IA est souvent liée à une mauvaise compréhension de ce qu'elle est et de son fonctionnement. Il est donc primordial de démocratiser les connaissances sur ce sujet. En expliquant les concepts de base, comme le **machine learning** ou le **deep learning**, on peut dissiper de nombreux malentendus. De même, sensibiliser le grand public à la manière dont les données sont collectées et utilisées permet d'éviter les fantasmes et les amalgames."
+              }
+            ]
+      },
+      {
+        "type": "category",
+        "title": "Conclusion",
+        "description":"",
+        "sections": [
+              {
+                "type": "text",
+                "content": "L'intelligence artificielle, loin d'être une menace, représente une opportunité extraordinaire pour améliorer nos vies. Bien qu'elle pose des défis, notamment éthiques, ces derniers peuvent être relevés grâce à une régulation adaptée et une éducation appropriée. Plutôt que de craindre l'IA, il est temps de l'accueillir avec pragmatisme et enthousiasme, en la considérant pour ce qu'elle est : **un outil puissant, conçu par l'humain, pour l'humain**."
+              }
+            ]
+      }
+    ]
+  },{
+    "id": 3,
+    "title": "Construire un Model de Classification des Fleurs Iris en Python",
+    "tags": ["IA", "Article"],
+    "image": "./assets/img/placeholder.webp",
+    "introduction": "Dans cet article, nous allons créer un model de classification pour le célèbre dataset **Iris**. Ce projet est une excellente introduction à **supervised learning** et à la **classification**. \n Le but est simple : prédire l'espèce d'une fleur (« **Iris-setosa** », « **Iris-versicolor** » ou « **Iris-virginica** ») en fonction des mesures de ses **petals** et de ses **sepals**.",
+    "categories": [
+      {
+        "type": "category",
+        "title": "Préparation de l'environnement",
+        "description":"Tout d'abord, nous devons importer les **libraries** nécessaires pour le projet. Voici le code pour cette étape :",
+        "sections": [
+          {
+            "type": "code",
+            "language": "python",
+            "content": "import pandas as pd\nimport numpy as np\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import classification_report, confusion_matrix\nimport seaborn as sns\nimport matplotlib.pyplot as plt"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "title": "Exploration des données",
+        "description":"Le dataset **Iris** est disponible directement dans **Scikit-learn**. Nous le chargeons et le convertissons en un **DataFrame** pour faciliter l'analyse.",
+        "sections": [
+          {
+            "type": "code",
+            "language": "python",
+            "content": "iris = load_iris()\nX = iris.data\ny = iris.target\nfeature_names = iris.feature_names\ntarget_names = iris.target_names\n\niris_df = pd.DataFrame(X, columns=feature_names)\niris_df['target'] = y\n\niris_df.head()"
+          },
+          {
+            "type": "text",
+            "content": "Nous pouvons ensuite explorer les relations entre les variables avec des **graphs** :"
+          },
+          {
+            "type": "code",
+            "language": "python",
+            "content": "sns.pairplot(iris_df, hue='target', diag_kind='kde', markers=[\"o\", \"s\", \"D\"])\nplt.show()"
+          }
+            ]
+      },
+      {
+        "type": "category",
+        "title": "Prétraitement des données",
+        "description":"Avant d'entraîner un **model**, nous divisons nos données en **training set** et **test set**. Nous normalisons également les caractéristiques pour éviter les problèmes liés à l'échelle des valeurs :",
+        "sections": [
+          {
+            "type": "code",
+            "language": "python",
+            "content": "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)\n\nscaler = StandardScaler()\nX_train = scaler.fit_transform(X_train)\nX_test = scaler.transform(X_test)"
+          }
+            ]
+      },
+      {
+        "type": "category",
+        "title": "Entraînement du Model",
+        "description":"Pour ce projet, nous utilisons un **Random Forest classifier** :",
+        "sections": [
+          {
+            "type": "code",
+            "language": "python",
+            "content": "model = RandomForestClassifier(random_state=42)\nmodel.fit(X_train, y_train)"
+          }
+            ]
+      },
+      {
+        "type": "category",
+        "title": "Évaluation des performances",
+        "description":"Nous évaluons les performances du model avec un **classification report** et une **confusion matrix** :",
+        "sections": [
+          {
+            "type": "code",
+            "language": "python",
+            "content": "y_pred = model.predict(X_test)\n\nprint(\"Rapport de classification :\")\nprint(classification_report(y_test, y_pred, target_names=target_names))\n\nconf_matrix = confusion_matrix(y_test, y_pred)\nsns.heatmap(conf_matrix, annot=True, fmt=\"d\", cmap=\"Blues\", xticklabels=target_names, yticklabels=target_names)\nplt.xlabel(\"Predictions\")\nplt.ylabel(\"Ground Truth\")\nplt.show()"
+          }
+            ]
+      },
+      {
+        "type": "category",
+        "title": "Conclusion",
+        "description":"Nous avons construit un **simple but effective model** pour prédire les espèces de fleurs dans le dataset **Iris**. Ce projet illustre les étapes essentielles d'un projet de **machine learning** : ",
+        "sections": [
+          {
+            "type": "firstline",
+            "content": "**Loading and exploring data**"
+          },
+          {
+            "type": "firstline",
+            "content": "**Data preprocessing**"
+          },
+          {
+            "type": "firstline",
+            "content": "**Training a model**"
+          },
+          {
+            "type": "firstline",
+            "content": "**Evaluating performance**"
+          }
             ]
       }
     ]
