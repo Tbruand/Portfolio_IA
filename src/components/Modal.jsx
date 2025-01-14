@@ -1,4 +1,6 @@
 import React from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const Modal = ({ project, onClose }) => {
   if (!project) return null;
@@ -31,13 +33,13 @@ const Modal = ({ project, onClose }) => {
         </button>
 
         {/* Titre principal */}
-        <h3 className='text-4xl font-bold text-gray-800 dark:text-white'>
+        <h3 className='text-4xl font-bold text-gray-800 dark:text-white break-words leading-tight'>
           {project.title}
         </h3>
 
         {/* Disclaimer */}
         {project.disclaimer && (
-          <div className='text-2xl font-bold text-red-800 dark:text-red mt-4'>
+          <div className='text-2xl font-bold text-red-800 dark:text-red-400 mt-4'>
             <p className='text-sm'>{formatText(project.disclaimer)}</p>
           </div>
         )}
@@ -57,7 +59,6 @@ const Modal = ({ project, onClose }) => {
               {categoryIndex > 0 && (
                 <hr className='border-t-2 border-gray-300 dark:border-gray-600 my-6' />
               )}
-
               <div>
                 {/* Titre de la catégorie */}
                 <h2 className='text-xl font-extrabold text-gray-800 dark:text-white mb-2'>
@@ -76,12 +77,9 @@ const Modal = ({ project, onClose }) => {
                   ? category.subcategories.map(
                       (subcategory, subcategoryIndex) => (
                         <div key={subcategoryIndex} className='mb-6'>
-                          {/* Titre de la sous-catégorie */}
                           <h3 className='text-lg font-bold text-gray-800 dark:text-white mb-2'>
                             {subcategory.title}
                           </h3>
-
-                          {/* Sections de la sous-catégorie */}
                           {subcategory.sections.map((section, sectionIndex) => {
                             switch (section.type) {
                               case "text":
@@ -97,7 +95,7 @@ const Modal = ({ project, onClose }) => {
                                 return (
                                   <p
                                     key={sectionIndex}
-                                    className='text-gray-800 dark:text-gray-200 whitespace-pre-line'
+                                    className='text-gray-600 dark:text-gray-400 whitespace-pre-line'
                                   >
                                     {formatText(section.content)}
                                   </p>
@@ -106,7 +104,7 @@ const Modal = ({ project, onClose }) => {
                                 return (
                                   <p
                                     key={sectionIndex}
-                                    className='text-gray-800 dark:text-gray-200 pt-4'
+                                    className='text-gray-800 dark:text-gray-200 font-semibold pt-4'
                                   >
                                     {formatText(section.content)}
                                   </p>
@@ -140,6 +138,18 @@ const Modal = ({ project, onClose }) => {
                                       alt='Section Image'
                                       className='w-full sm:w-2/3 h-auto object-cover'
                                     />
+                                  </div>
+                                );
+                              case "code":
+                                return (
+                                  <div key={sectionIndex} className='mt-4'>
+                                    <SyntaxHighlighter
+                                      language={section.language || "python"}
+                                      style={vscDarkPlus}
+                                      className='rounded-lg'
+                                    >
+                                      {section.content}
+                                    </SyntaxHighlighter>
                                   </div>
                                 );
                               case "liengithub":
@@ -207,8 +217,7 @@ const Modal = ({ project, onClose }) => {
                         </div>
                       )
                     )
-                  : /* Sections directement dans la catégorie */
-                    category.sections.map((section, sectionIndex) => {
+                  : category.sections.map((section, sectionIndex) => {
                       switch (section.type) {
                         case "text":
                           return (
@@ -219,23 +228,17 @@ const Modal = ({ project, onClose }) => {
                               {formatText(section.content)}
                             </p>
                           );
-                        case "subtext":
+                        case "code":
                           return (
-                            <p
-                              key={sectionIndex}
-                              className='text-gray-800 dark:text-gray-200 whitespace-pre-line'
-                            >
-                              {formatText(section.content)}
-                            </p>
-                          );
-                        case "littletitle":
-                          return (
-                            <p
-                              key={sectionIndex}
-                              className='text-gray-800 dark:text-gray-200 pt-4'
-                            >
-                              {formatText(section.content)}
-                            </p>
+                            <div key={sectionIndex} className='mt-4'>
+                              <SyntaxHighlighter
+                                language={section.language || "python"}
+                                style={vscDarkPlus}
+                                className='rounded-lg'
+                              >
+                                {section.content}
+                              </SyntaxHighlighter>
+                            </div>
                           );
                         case "firstline":
                           return (
@@ -254,19 +257,6 @@ const Modal = ({ project, onClose }) => {
                             >
                               <li>{formatText(section.content)}</li>
                             </ul>
-                          );
-                        case "img":
-                          return (
-                            <div
-                              key={sectionIndex}
-                              className='flex justify-center mt-4 mb-4'
-                            >
-                              <img
-                                src={section.content}
-                                alt='Section Image'
-                                className='w-full sm:w-2/3 h-auto object-cover'
-                              />
-                            </div>
                           );
                         case "liengithub":
                           return (
