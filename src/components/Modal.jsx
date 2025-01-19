@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const Modal = ({ project, onClose }) => {
+  // Ajout du gestionnaire de clavier
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        onClose(); // Fermer la modale si "Échap" est pressé
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    // Nettoyage lors du démontage
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
+  // Condition pour ne pas afficher la modale si le projet est nul
   if (!project) return null;
 
   const formatText = (text) => {
@@ -11,7 +28,7 @@ const Modal = ({ project, onClose }) => {
       part.startsWith("**") && part.endsWith("**") ? (
         <strong
           key={index}
-          className='text-blue-600 dark:text-gray-100 font-bold'
+          className="text-blue-600 dark:text-gray-100 font-bold"
         >
           {part.slice(2, -2)}
         </strong>
@@ -22,11 +39,11 @@ const Modal = ({ project, onClose }) => {
   };
 
   return (
-    <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50'>
-      <div className='relative bg-white dark:bg-gray-800 rounded-lg p-6 w-11/12 h-5/6 max-w-4xl overflow-y-auto scrollbar-hidden'>
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div className="relative bg-white dark:bg-gray-800 rounded-lg p-6 w-11/12 h-5/6 max-w-4xl overflow-y-auto scrollbar-hidden">
         {/* Bouton de fermeture */}
         <button
-          className='absolute top-6 right-6 text-4xl text-blue-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-300'
+          className="absolute top-6 right-6 text-4xl text-blue-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-300"
           onClick={onClose}
         >
           ✕
@@ -86,7 +103,7 @@ const Modal = ({ project, onClose }) => {
                                 return (
                                   <p
                                     key={sectionIndex}
-                                    className='text-gray-800 dark:text-gray-200 whitespace-pre-line'
+                                    className='text-gray-800 dark:text-gray-200 whitespace-pre-line mt-2'
                                   >
                                     {formatText(section.content)}
                                   </p>
@@ -95,7 +112,7 @@ const Modal = ({ project, onClose }) => {
                                 return (
                                   <p
                                     key={sectionIndex}
-                                    className='text-gray-600 dark:text-gray-400 whitespace-pre-line'
+                                    className='text-gray-600 dark:text-gray-400 whitespace-pre-line mt-2'
                                   >
                                     {formatText(section.content)}
                                   </p>
@@ -104,7 +121,7 @@ const Modal = ({ project, onClose }) => {
                                 return (
                                   <p
                                     key={sectionIndex}
-                                    className='text-gray-800 dark:text-gray-200 font-semibold pt-4'
+                                    className='text-gray-800 dark:text-gray-200 font-semibold pt-4 mt-2'
                                   >
                                     {formatText(section.content)}
                                   </p>
@@ -113,7 +130,7 @@ const Modal = ({ project, onClose }) => {
                                 return (
                                   <ul
                                     key={sectionIndex}
-                                    className='list-disc list-inside text-gray-800 dark:text-gray-200 pl-6'
+                                    className='list-disc list-inside text-gray-800 dark:text-gray-200 pl-6 mt-2'
                                   >
                                     <li>{formatText(section.content)}</li>
                                   </ul>
@@ -122,27 +139,29 @@ const Modal = ({ project, onClose }) => {
                                 return (
                                   <ul
                                     key={sectionIndex}
-                                    className='list-disc list-inside text-gray-800 dark:text-gray-200 pl-12'
+                                    className='list-disc list-inside text-gray-800 dark:text-gray-200 pl-12 mt-2'
                                   >
                                     <li>{formatText(section.content)}</li>
                                   </ul>
                                 );
-                              case "img":
-                                return (
-                                  <div
-                                    key={sectionIndex}
-                                    className='flex justify-center mt-4 mb-4'
-                                  >
-                                    <img
-                                      src={section.content}
-                                      alt='Section Image'
-                                      className='w-full sm:w-2/3 h-auto object-cover'
-                                    />
-                                  </div>
-                                );
+                                case "img":
+                                  const imagePath = section.content; // "./assets/img/p1/PCA_2D.png"
+                                  const imageName = imagePath.split('/').pop().split('.')[0]; // "PCA_2D"
+                                  return (
+                                    <div
+                                      key={sectionIndex}
+                                      className='flex justify-center my-4'
+                                    >
+                                      <img
+                                        src={section.content}
+                                        alt={`Image montrant ${imageName}`}
+                                        className='w-full sm:w-2/3 h-auto object-cover'
+                                      />
+                                    </div>
+                                  );
                               case "code":
                                 return (
-                                  <div key={sectionIndex} className='mt-4'>
+                                  <div key={sectionIndex} className='mt-2'>
                                     <SyntaxHighlighter
                                       language={section.language || "python"}
                                       style={vscDarkPlus}
@@ -154,7 +173,7 @@ const Modal = ({ project, onClose }) => {
                                 );
                               case "liengithub":
                                 return (
-                                  <div key={sectionIndex} className='mt-4 mb-4'>
+                                  <div key={sectionIndex} className='my-2'>
                                     <a
                                       href={section.content}
                                       target='_blank'
@@ -169,7 +188,7 @@ const Modal = ({ project, onClose }) => {
                                 return (
                                   <table
                                     key={sectionIndex}
-                                    className='w-full border-collapse mt-4 mb-4 text-left'
+                                    className='w-full border-collapse my-2 text-left'
                                   >
                                     <thead>
                                       <tr className='bg-gray-200 dark:bg-gray-700'>
@@ -223,14 +242,14 @@ const Modal = ({ project, onClose }) => {
                           return (
                             <p
                               key={sectionIndex}
-                              className='text-gray-800 dark:text-gray-200 whitespace-pre-line'
+                              className='text-gray-800 dark:text-gray-200 whitespace-pre-line mt-2'
                             >
                               {formatText(section.content)}
                             </p>
                           );
                         case "code":
                           return (
-                            <div key={sectionIndex} className='mt-4'>
+                            <div key={sectionIndex} className='mt-2'>
                               <SyntaxHighlighter
                                 language={section.language || "python"}
                                 style={vscDarkPlus}
@@ -244,7 +263,7 @@ const Modal = ({ project, onClose }) => {
                           return (
                             <ul
                               key={sectionIndex}
-                              className='list-disc list-inside text-gray-800 dark:text-gray-200 pl-6'
+                              className='list-disc list-inside text-gray-800 dark:text-gray-200 pl-6 mt-2'
                             >
                               <li>{formatText(section.content)}</li>
                             </ul>
@@ -253,14 +272,14 @@ const Modal = ({ project, onClose }) => {
                           return (
                             <ul
                               key={sectionIndex}
-                              className='list-disc list-inside text-gray-800 dark:text-gray-200 pl-12'
+                              className='list-disc list-inside text-gray-800 dark:text-gray-200 pl-12 mt-2'
                             >
                               <li>{formatText(section.content)}</li>
                             </ul>
                           );
                         case "liengithub":
                           return (
-                            <div key={sectionIndex} className='mt-4 mb-4'>
+                            <div key={sectionIndex} className='my-2'>
                               <a
                                 href={section.content}
                                 target='_blank'
