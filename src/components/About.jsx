@@ -1,25 +1,25 @@
 import { FaLinkedin, FaGithub, FaFileDownload } from "react-icons/fa";
-import Slider from "react-slick"; // Importation du carousel
+import Slider from "react-slick";
 
 const About = () => {
-  // Configurations du carousel
   const settings = {
     dots: false,
+    arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5, // Nombre de stacks visibles
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1500, // Temps entre chaque défilement
+    autoplaySpeed: 1500,
     responsive: [
       {
-        breakpoint: 768, // Configuration pour les écrans plus petits
+        breakpoint: 768,
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 480, // Configuration pour les écrans très petits
+        breakpoint: 480,
         settings: {
           slidesToShow: 2,
         },
@@ -27,7 +27,6 @@ const About = () => {
     ],
   };
 
-  // Liste des stacks
   const stacks = [
     { name: "React", logo: "/assets/logos/react.svg" },
     { name: "HTML", logo: "/assets/logos/html.svg" },
@@ -41,18 +40,21 @@ const About = () => {
     { name: "Git", logo: "/assets/logos/git.svg" },
     { name: "Heroku", logo: "/assets/logos/heroku.svg" },
     { name: "Vercel", logo: "/assets/logos/vercel.svg" },
+    { name: "Three.js", logo: "/assets/logos/three-js-logo.png" },
+    { name: "Flask", logo: "/assets/logos/flask.svg" },
+    { name: "PowerBI", logo: "/assets/logos/PowerBI.png" },
   ];
 
   return (
     <section
-      id="about"
-      className="min-h-screen pt-24 pb-12 bg-gray-100 dark:bg-gray-900 px-4 md:px-16"
+      id='about'
+      className='min-h-screen pt-24 pb-12 bg-gray-100 dark:bg-darkmode px-4 md:px-16'
     >
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800 dark:text-gray-100">
+      <div className='max-w-5xl mx-auto'>
+        <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800 dark:text-gray-100'>
           À propos de moi
         </h2>
-        <p className="text-base sm:text-lg md:text-xl text-center text-gray-700 dark:text-gray-300">
+        <p className='text-base sm:text-lg md:text-xl text-center text-gray-700 dark:text-gray-300'>
           Bonjour ! Je m'appelle <strong>Thomas Bruand</strong>, développeur Web
           junior en reconversion professionnelle, actuellement en formation pour
           devenir <strong>développeur en intelligence artificielle</strong>.
@@ -84,16 +86,21 @@ const About = () => {
         </p>
 
         {/* Carousel des stacks */}
-        <div className="my-8">
-          <Slider {...settings}>
+        <div className='relative my-8'>
+          <Slider {...settings} className='relative z-10 my-12'>
             {stacks.map((stack, index) => (
-              <div key={index} className="flex justify-center items-center">
-                <img
-                  src={stack.logo}
-                  alt={stack.name}
-                  className="w-20 h-20 object-contain"
-                />
-                <p className="text-center mt-2 text-sm text-gray-700 dark:text-gray-300">
+              <div
+                key={index}
+                className='flex flex-col justify-center items-center'
+              >
+                <div className='w-20 h-20 flex items-center justify-center bg-gray-100 rounded-md dark:bg-darkmode'>
+                  <img
+                    src={stack.logo}
+                    alt={stack.name}
+                    className='max-w-full max-h-full object-contain'
+                  />
+                </div>
+                <p className='text-center mt-2 text-sm text-gray-700 dark:text-gray-300'>
                   {stack.name}
                 </p>
               </div>
@@ -102,35 +109,30 @@ const About = () => {
         </div>
 
         {/* Boutons pour les réseaux sociaux et CV */}
-        <div className="flex justify-center mt-8 gap-6">
-          {/* Bouton LinkedIn */}
+        <div className='flex justify-center mt-8 gap-6'>
           <a
-            href="https://www.linkedin.com/in/tbruand/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition flex items-center justify-center"
-            aria-label="LinkedIn"
+            href='https://www.linkedin.com/in/tbruand/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='p-3 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition flex items-center justify-center'
+            aria-label='LinkedIn'
           >
             <FaLinkedin size={24} />
           </a>
-
-          {/* Bouton GitHub */}
           <a
-            href="https://github.com/Tbruand"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-900 transition flex items-center justify-center"
-            aria-label="GitHub"
+            href='https://github.com/Tbruand'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='p-3 bg-gray-800 text-white rounded-full shadow-md hover:bg-darkmode_500 transition flex items-center justify-center'
+            aria-label='GitHub'
           >
             <FaGithub size={24} />
           </a>
-
-          {/* Bouton CV */}
           <a
-            href="./assets/DL/CV_TBRUAND.pdf"
+            href='./assets/DL/CV_TBRUAND.pdf'
             download
-            className="p-3 bg-green-600 text-white rounded-full shadow-md hover:bg-green-700 transition flex items-center justify-center"
-            aria-label="Télécharger mon CV"
+            className='p-3 bg-green-600 text-white rounded-full shadow-md hover:bg-green-700 transition flex items-center justify-center'
+            aria-label='Télécharger mon CV'
           >
             <FaFileDownload size={24} />
           </a>
