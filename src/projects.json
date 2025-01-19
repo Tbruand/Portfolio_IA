@@ -205,11 +205,17 @@
               {
                 "type": "subtext",
                 "content": "**Algorithmes courants** : Q-learning, Deep Q-Networks (DQN), Policy gradients."
-              },
-              {
-                "type": "text",
-                "content": "Chaque type d'apprentissage est adapté à des situations spécifiques et le choix de l'algorithme dépend de la nature des **data** et des objectifs poursuivis."
-              }
+              }              
+            ]
+      },
+      {
+        "type": "category",
+        "title": "Conclusion",
+        "sections": [
+          {
+            "type": "text",
+            "content": "Chaque type d'apprentissage est adapté à des situations spécifiques et le choix de l'algorithme dépend de la nature des **data** et des objectifs poursuivis."
+          }
             ]
       }
     ]
@@ -218,7 +224,8 @@
     "id": 2,
     "title": "L'IA : pourquoi il ne faut pas en avoir peur ?",
     "tags": ["IA", "Article"],
-    "image": "./assets/img/placeholder.webp",
+    "image": "./assets/img/article_IA/head_AI_fear.webp",
+    "disclaimer": "🚨 Les images de cet article sont générées par intelligence artificielle. 🚨",
     "introduction": "Depuis plusieurs années, l'**intelligence artificielle (IA)** occupe une place de plus en plus importante dans nos vies quotidiennes. Des assistants virtuels comme Siri et Alexa aux voitures autonomes en passant par les recommandations de contenus sur les plateformes de streaming, l'IA semble être partout. Pourtant, malgré ses nombreux avantages, elle suscite aussi des peurs et des interrogations. Ces craintes, souvent exagérées par les représentations cinématographiques et littéraires, peuvent être apaisées en comprenant mieux la nature, les limites et les potentialités de l'intelligence artificielle.",
     "categories": [
       {
@@ -226,9 +233,14 @@
         "title": "Une technologie conçue pour aider",
         "description":"",
         "sections": [
+              
               {
                 "type": "text",
                 "content": "L'objectif premier de l'IA est de **faciliter nos vies**. Elle est conçue pour accomplir des tâches spécifiques, souvent répétitives ou complexes, avec une efficacité accrue. Par exemple, dans le domaine médical, l'IA permet de détecter précocement certaines maladies, comme le cancer, grâce à l'**analyse d'images médicales**. Elle assiste les médecins, mais ne les remplace pas, car la décision finale revient toujours à l'humain."
+              },
+              {
+                "type": "img",
+                "content": "./assets/img/article_IA/IA_aidant_l_humain.webp"
               },
               {
                 "type": "text",
@@ -243,7 +255,11 @@
         "sections": [
               {
                 "type": "text",
-                "content": "Parmi les craintes récurrentes, on retrouve celle d'une IA incontrôlable qui dominerait l'humanité. Cette idée, popularisée par des films comme *Terminator*, repose davantage sur la fiction que sur la réalité. En effet, il est essentiel de distinguer l'IA \"faible\" et l'IA \"forte\". L'IA \"faible\", qui constitue la majorité des systèmes actuels, est conçue pour exécuter des tâches spécifiques, comme recommander un film ou analyser une image. Quant à l'IA \"forte\", qui pourrait théoriquement atteindre un niveau d'intelligence comparable à celui de l'humain, elle demeure un concept théorique, loin d'être réalisé. Ainsi, les systèmes actuels d'intelligence artificielle sont loin d'être autonomes : ils sont programmés pour des objectifs précis et opèrent sous le contrôle humain."
+                "content": "Parmi les craintes récurrentes, on retrouve celle d'une IA incontrôlable qui dominerait l'humanité. Cette idée, popularisée par des films comme **Terminator**, repose davantage sur la fiction que sur la réalité. En effet, il est essentiel de distinguer l'IA \"faible\" et l'IA \"forte\". L'IA \"faible\", qui constitue la majorité des systèmes actuels, est conçue pour exécuter des tâches spécifiques, comme recommander un film ou analyser une image. Quant à l'IA \"forte\", qui pourrait théoriquement atteindre un niveau d'intelligence comparable à celui de l'humain, elle demeure un concept théorique, loin d'être réalisé. Ainsi, les systèmes actuels d'intelligence artificielle sont loin d'être autonomes : ils sont programmés pour des objectifs précis et opèrent sous le contrôle humain."
+              },
+              {
+                "type": "img",
+                "content": "./assets/img/article_IA/IA_forte.webp"
               },
               {
                 "type": "text",
@@ -259,6 +275,10 @@
               {
                 "type": "text",
                 "content": "Pour garantir que l'IA reste bénéfique, il est essentiel de développer un cadre éthique. Cela inclut la **transparence des algorithmes**, le **respect de la vie privée** et l'**équité des décisions** prises par les systèmes automatisés. Des initiatives internationales, comme celles de l'UNESCO, visent à encadrer l'utilisation de l'intelligence artificielle afin d'éviter les abus."
+              },
+              {
+                "type": "img",
+                "content": "./assets/img/article_IA/IA_ethique.webp"
               }
             ]
       },
@@ -270,6 +290,10 @@
               {
                 "type": "text",
                 "content": "La peur de l'IA est souvent liée à une mauvaise compréhension de ce qu'elle est et de son fonctionnement. Il est donc primordial de démocratiser les connaissances sur ce sujet. En expliquant les concepts de base, comme le **machine learning** ou le **deep learning**, on peut dissiper de nombreux malentendus. De même, sensibiliser le grand public à la manière dont les données sont collectées et utilisées permet d'éviter les fantasmes et les amalgames."
+              },
+              {
+                "type": "img",
+                "content": "./assets/img/article_IA/IA_pedagogique.webp"
               }
             ]
       },
@@ -288,8 +312,9 @@
   },{
     "id": 3,
     "title": "Construire un Model de Classification des Fleurs Iris en Python",
-    "tags": ["IA", "Article"],
-    "image": "./assets/img/placeholder.webp",
+    "tags": ["IA", "Article", "Cours", "Python"],
+    "image": "./assets/img/projet_iris/head_iris.webp",
+    "disclaimer": "🚨 Contenu en français et anglais, meilleur pour l'apprentissage des termes IA. 🚨",
     "introduction": "Dans cet article, nous allons créer un model de classification pour le célèbre dataset **Iris**. Ce projet est une excellente introduction à **supervised learning** et à la **classification**. \n Le but est simple : prédire l'espèce d'une fleur (« **Iris-setosa** », « **Iris-versicolor** » ou « **Iris-virginica** ») en fonction des mesures de ses **petals** et de ses **sepals**.",
     "categories": [
       {
@@ -364,7 +389,7 @@
       {
         "type": "category",
         "title": "Conclusion",
-        "description":"Nous avons construit un **simple but effective model** pour prédire les espèces de fleurs dans le dataset **Iris**. Ce projet illustre les étapes essentielles d'un projet de **machine learning** : ",
+        "description":"Nous avons construit un **model simple mais efficace** pour prédire les espèces de fleurs dans le dataset **Iris**. Ce projet illustre les étapes essentielles d'un projet de **machine learning** : ",
         "sections": [
           {
             "type": "firstline",
@@ -381,6 +406,207 @@
           {
             "type": "firstline",
             "content": "**Evaluating performance**"
+          },
+          {
+            "type": "text",
+            "content": "Pour consulter le code source complet du projet, veuillez visiter le dépôt GitHub : "
+          },
+          {
+            "type": "liengithub",
+            "content": "https://github.com/Tbruand/Projet_python_portfolio/tree/main/cours_pratique/classification"
+          }
+            ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Explorateur de l'Espace : Création d'une Expérience d'Exploration Spatiale Interactive",
+    "tags": ["Web", "Article"],
+    "image": "./assets/img/projet_space/head_space.jpg",
+    "introduction": "Dans le cadre de mon parcours de développeur web, j'ai entrepris la réalisation d'un projet ambitieux nommé **Explorateur de l'Espace**. L'objectif principal était de combiner mes compétences en **React.js** et d'apprendre à utiliser **Three.js** pour créer des visualisations 3D immersives. Ce projet vise à offrir aux utilisateurs une exploration interactive du système solaire, des planètes et des missions spatiales.",
+    "categories": [
+      {
+        "type": "category",
+        "title": "Objectifs du Projet",
+        "sections": [
+          {
+            "type": "firstline",
+            "content": "**Apprentissage de Three.js** : Intégrer des visualisations 3D interactives pour représenter fidèlement le système solaire."
+          },
+          {
+            "type": "firstline",
+            "content": "**Maîtrise des API** : Consommer des données externes pour fournir des informations précises et à jour sur les planètes et les missions spatiales."
+          },
+          {
+            "type": "firstline",
+            "content": "**Renforcement en React.js** : Structurer l'application de manière modulaire et efficace en utilisant les bonnes pratiques de React."
+          },
+          {
+            "type": "text",
+            "content": "**Pour voir le site en ligne cliquer sur le lien** :"
+          },
+          {
+            "type": "liensite",
+            "content": "https://explorateur-espace.vercel.app/"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "title": "Fonctionnalités Clés",
+        "sections": [
+          {
+            "type": "firstline",
+            "content": "**Système Solaire en 3D** :"
+          },
+          {
+            "type": "secondline",
+            "content": "Visualisation interactive permettant aux utilisateurs de naviguer entre les planètes."
+          },
+          {
+            "type": "secondline",
+            "content": "Zoom directionnel pour une exploration détaillée des planètes éloignées."
+          },
+          {
+            "type": "secondline",
+            "content": "Animation des orbites des planètes à des vitesses réalistes."
+          },
+          {
+            "type": "secondline",
+            "content": "Ajout aléatoire de comètes pour dynamiser l'expérience utilisateur."
+          },
+          {
+            "type": "firstline",
+            "content": "**Informations sur les Planètes** :"
+          },
+          {
+            "type": "secondline",
+            "content": "Détails complets sur chaque planète, y compris les caractéristiques physiques telles que le diamètre et la température."
+          },
+          {
+            "type": "secondline",
+            "content": "Modèles 3D rotatifs intégrés pour une visualisation immersive."
+          },
+          {
+            "type": "firstline",
+            "content": "**Missions Spatiales** :"
+          },
+          {
+            "type": "secondline",
+            "content": "Affichage des missions spatiales avec un défilement infini pour une navigation fluide."
+          },
+          {
+            "type": "secondline",
+            "content": "Intégration des données des missions à partir de fichiers JSON structurés."
+          },
+          {
+            "type": "firstline",
+            "content": "**Interface Utilisateur Responsive** :"
+          },
+          {
+            "type": "secondline",
+            "content": "Barre de navigation avec menu burger pour une utilisation optimisée sur les appareils mobiles."
+          },
+          {
+            "type": "secondline",
+            "content": "Design adaptatif assurant une expérience cohérente sur toutes les tailles d'écran."
+          }
+            ]
+      },
+      {
+        "type": "category",
+        "title": "Processus de Développement",
+        "sections": [
+          {
+            "type": "text",
+            "content": "**1. Initialisation du Projet** :"
+          },
+          {
+            "type": "firstline",
+            "content": "Création de l'application React en utilisant Create React App pour une configuration rapide."
+          },
+          {
+            "type": "firstline",
+            "content": "Mise en place de Tailwind CSS pour faciliter le stylisme et assurer une réactivité optimale."
+          },
+          {
+            "type": "text",
+            "content": "**2. Intégration de Three.js** :"
+          },
+          {
+            "type": "firstline",
+            "content": "Configuration de Three.js pour gérer les scènes, les caméras et les rendus nécessaires aux visualisations 3D."
+          },
+          {
+            "type": "firstline",
+            "content": "Développement de composants React dédiés pour encapsuler les éléments Three.js, assurant une séparation claire des préoccupations."
+          },
+          {
+            "type": "text",
+            "content": "**3. Gestion des Données** :"
+          },
+          {
+            "type": "firstline",
+            "content": "Création de fichiers JSON contenant des informations détaillées sur les planètes et les missions spatiales."
+          },
+          {
+            "type": "firstline",
+            "content": "Utilisation de hooks React pour gérer l'état et les effets liés à la récupération et à l'affichage des données."
+          },
+          {
+            "type": "text",
+            "content": "**4. Développement de l'Interface Utilisateur** :"
+          },
+          {
+            "type": "firstline",
+            "content": "Conception de composants réutilisables pour la barre de navigation, les cartes des planètes et les listes de missions."
+          },
+          {
+            "type": "firstline",
+            "content": "Implémentation de Framer Motion pour ajouter des animations fluides et améliorer l'interactivité."
+          },
+          {
+            "type": "text",
+            "content": "**5. Tests et Déploiement** :"
+          },
+          {
+            "type": "firstline",
+            "content": "Réalisation de tests approfondis pour assurer la compatibilité sur différents navigateurs et appareils."
+          },
+          {
+            "type": "firstline",
+            "content": "Déploiement de l'application sur Vercel pour une accessibilité en ligne aisée."
+          }
+
+            ]
+      },
+      {
+        "type": "category",
+        "title": "Défis Rencontrés",
+        "sections": [
+          {
+            "type": "firstline",
+            "content": "**Performance des Rendus 3D** : L'intégration de modèles 3D complexes a nécessité des optimisations pour maintenir des performances fluides, notamment en réduisant le nombre de polygones et en optimisant les textures."
+          },
+          {
+            "type": "firstline",
+            "content": "**Gestion des Données en Temps Réel** : L'obtention de données précises et à jour sur les missions spatiales a impliqué l'utilisation d'API externes et la mise en place de mécanismes de mise en cache pour améliorer les temps de réponse."
+          }
+            ]
+      },
+      {
+        "type": "category",
+        "title": "Conclusion",
+        "description":"Le projet **Explorateur de l'Espace** m'a permis de renforcer mes compétences en développement web, en particulier dans l'intégration de visualisations 3D interactives avec Three.js et la gestion efficace des données avec React.js. Ce projet illustre ma capacité à mener à bien des applications complexes, de la conception à la mise en production, tout en assurant une expérience utilisateur riche et immersive.",
+        "sections": [
+          {
+            "type": "text",
+            "content": "Pour consulter le code source complet du projet, veuillez visiter le dépôt GitHub : "
+          },
+          {
+            "type": "liengithub",
+            "content": "https://github.com/Tbruand/explorateur-espace"
           }
             ]
       }
