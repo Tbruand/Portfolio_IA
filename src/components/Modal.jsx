@@ -28,7 +28,7 @@ const Modal = ({ project, onClose }) => {
       part.startsWith("**") && part.endsWith("**") ? (
         <strong
           key={index}
-          className="text-blue-600 dark:text-gray-100 font-bold"
+          className='text-blue-600 dark:text-gray-100 font-bold'
         >
           {part.slice(2, -2)}
         </strong>
@@ -39,18 +39,24 @@ const Modal = ({ project, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="relative bg-white dark:bg-gray-800 rounded-lg p-6 w-11/12 h-5/6 max-w-4xl overflow-y-auto scrollbar-hidden">
+    <div
+      className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 transition-opacity duration-300 animate-fade-in'
+      onClick={onClose}
+    >
+      <div
+        className='relative bg-white dark:bg-darkmode rounded-lg p-6 w-11/12 h-5/6 max-w-4xl overflow-y-auto scrollbar-hidden transform transition-transform duration-300 scale-100 animate-scale-in'
+        onClick={(e) => e.stopPropagation()} // Empêcher la fermeture en cliquant à l'intérieur
+      >
         {/* Bouton de fermeture */}
         <button
-          className="absolute top-6 right-6 text-4xl text-blue-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-300"
+          className='absolute top-6 right-6 text-4xl text-blue-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-300'
           onClick={onClose}
         >
           ✕
         </button>
 
         {/* Titre principal */}
-        <h3 className='text-4xl font-bold text-gray-800 dark:text-white break-words leading-tight'>
+        <h3 className='text-4xl font-bold text-gray-800 dark:text-white break-words leading-tight mt-10'>
           {project.title}
         </h3>
 
@@ -144,21 +150,24 @@ const Modal = ({ project, onClose }) => {
                                     <li>{formatText(section.content)}</li>
                                   </ul>
                                 );
-                                case "img":
-                                  const imagePath = section.content; // "./assets/img/p1/PCA_2D.png"
-                                  const imageName = imagePath.split('/').pop().split('.')[0]; // "PCA_2D"
-                                  return (
-                                    <div
-                                      key={sectionIndex}
-                                      className='flex justify-center my-4'
-                                    >
-                                      <img
-                                        src={section.content}
-                                        alt={`Image montrant ${imageName}`}
-                                        className='w-full sm:w-2/3 h-auto object-cover'
-                                      />
-                                    </div>
-                                  );
+                              case "img":
+                                const imagePath = section.content; // "./assets/img/p1/PCA_2D.png"
+                                const imageName = imagePath
+                                  .split("/")
+                                  .pop()
+                                  .split(".")[0]; // "PCA_2D"
+                                return (
+                                  <div
+                                    key={sectionIndex}
+                                    className='flex justify-center my-4'
+                                  >
+                                    <img
+                                      src={section.content}
+                                      alt={`Image montrant ${imageName}`}
+                                      className='w-full sm:w-2/3 h-auto object-cover'
+                                    />
+                                  </div>
+                                );
                               case "code":
                                 return (
                                   <div key={sectionIndex} className='mt-2'>
@@ -184,6 +193,19 @@ const Modal = ({ project, onClose }) => {
                                     </a>
                                   </div>
                                 );
+                              case "liensite":
+                                return (
+                                  <div key={sectionIndex} className='my-2'>
+                                    <a
+                                      href={section.content}
+                                      target='_blank'
+                                      rel='noopener noreferrer'
+                                      className='text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-600'
+                                    >
+                                      Lien vers le site
+                                    </a>
+                                  </div>
+                                );
                               case "table":
                                 return (
                                   <table
@@ -191,7 +213,7 @@ const Modal = ({ project, onClose }) => {
                                     className='w-full border-collapse my-2 text-left'
                                   >
                                     <thead>
-                                      <tr className='bg-gray-200 dark:bg-gray-700'>
+                                      <tr className='bg-gray-200 dark:bg-darkmode_400'>
                                         {section.content.headers.map(
                                           (header, headerIndex) => (
                                             <th
@@ -211,8 +233,8 @@ const Modal = ({ project, onClose }) => {
                                             key={rowIndex}
                                             className={`${
                                               rowIndex % 2 === 0
-                                                ? "bg-gray-50 dark:bg-gray-800"
-                                                : "bg-white dark:bg-gray-900"
+                                                ? "bg-gray-50 dark:bg-darkmode"
+                                                : "bg-white dark:bg-darkmode_500"
                                             }`}
                                           >
                                             {row.map((cell, cellIndex) => (
@@ -288,6 +310,37 @@ const Modal = ({ project, onClose }) => {
                               >
                                 Lien vers GitHub
                               </a>
+                            </div>
+                          );
+                        case "liensite":
+                          return (
+                            <div key={sectionIndex} className='my-2'>
+                              <a
+                                href={section.content}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-600'
+                              >
+                                Lien vers le site
+                              </a>
+                            </div>
+                          );
+                        case "img":
+                          const imagePath = section.content; // "./assets/img/p1/PCA_2D.png"
+                          const imageName = imagePath
+                            .split("/")
+                            .pop()
+                            .split(".")[0]; // "PCA_2D"
+                          return (
+                            <div
+                              key={sectionIndex}
+                              className='flex justify-center my-4'
+                            >
+                              <img
+                                src={section.content}
+                                alt={`Image montrant ${imageName}`}
+                                className='w-full sm:w-2/3 h-auto object-cover'
+                              />
                             </div>
                           );
                         default:

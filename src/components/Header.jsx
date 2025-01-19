@@ -7,7 +7,7 @@ const Header = ({ activeSection, toggleDarkMode, darkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full bg-white dark:bg-gray-800 bg-opacity-90 shadow-md z-50">
+    <header className="fixed top-0 w-full bg-white dark:bg-darkmode_500 bg-opacity-90 shadow-md z-50">
       <nav className="flex justify-between items-center p-4 max-w-7xl mx-auto">
         {/* Logo */}
         <IoMdPlanet className="text-blue-500 dark:text-white" size={40} />
@@ -47,7 +47,7 @@ const Header = ({ activeSection, toggleDarkMode, darkMode }) => {
         <div
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } absolute md:static top-full left-0 w-full md:w-auto bg-white bg-opacity-90 dark:bg-gray-800 md:bg-transparent md:dark:bg-transparent md:flex items-center space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row`}
+          } absolute md:static top-full left-0 w-full md:w-auto bg-white bg-opacity-90 dark:bg-darkmode_500 md:bg-transparent md:dark:bg-transparent md:flex items-center space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row`}
         >
           {["home", "about", "portfolio", "contact"].map((section) => (
             <a
@@ -76,7 +76,7 @@ const Header = ({ activeSection, toggleDarkMode, darkMode }) => {
         {/* Dark Mode Toggle */}
         <button
           onClick={toggleDarkMode}
-          className="p-2 bg-gray-200 dark:bg-gray-700 rounded-lg focus:outline-none flex items-center justify-center w-10 h-10"
+          className="p-2 bg-gray-200 dark:bg-darkmode_400 rounded-lg focus:outline-none flex items-center justify-center w-10 h-10"
         >
           {darkMode ? (
             <GiPowerButton className="text-white" size={20} />

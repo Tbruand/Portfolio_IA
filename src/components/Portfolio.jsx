@@ -10,7 +10,7 @@ const Portfolio = ({
   return (
     <section
       id="portfolio"
-      className="min-h-screen pt-24 pb-12 bg-gray-100 dark:bg-gray-900 px-4 md:px-16"
+      className="min-h-screen pt-24 pb-12 bg-gray-100 dark:bg-darkmode px-4 md:px-16"
     >
       {/* Titre de la section */}
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800 dark:text-gray-100">
@@ -26,7 +26,7 @@ const Portfolio = ({
             className={`px-4 py-2 rounded-lg ${
               selectedTags.includes(tag)
                 ? "bg-blue-600 text-white"
-                : "bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+                : "bg-gray-300 dark:bg-darkmode_400 text-gray-800 dark:text-gray-200"
             } hover:bg-blue-500 focus:outline-none`}
           >
             {tag}
@@ -39,7 +39,7 @@ const Portfolio = ({
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col h-80 cursor-pointer"
+            className="bg-white dark:bg-darkmode_500 border border-gray-200 dark:border-darkmode_400 rounded-lg shadow-md overflow-hidden flex flex-col h-80 cursor-pointer transition-transform transform hover:scale-105 hover:shadow-lg"
             onClick={() => onProjectClick(project)}
           >
             {/* Image du projet */}

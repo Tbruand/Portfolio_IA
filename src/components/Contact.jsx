@@ -35,7 +35,7 @@ const Contact = () => {
   return (
     <section
       id='contact'
-      className='pt-24 pb-12 bg-gray-100 dark:bg-gray-900 px-4 md:px-16'
+      className='pt-24 pb-12 bg-gray-100 dark:bg-darkmode px-4 md:px-16'
     >
       <div className='max-w-5xl mx-auto'>
         <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800 dark:text-gray-100'>
@@ -53,7 +53,7 @@ const Contact = () => {
               type='text'
               id='name'
               name='user_name'
-              className='p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100'
+              className='p-3 rounded-lg border border-gray-300 dark:border-darkmode_400 bg-white dark:bg-darkmode_500 text-gray-800 dark:text-gray-100'
               placeholder='John Doe'
               value={formData.user_name}
               onChange={handleChange}
@@ -71,7 +71,7 @@ const Contact = () => {
               type='email'
               id='email'
               name='user_email'
-              className='p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100'
+              className='p-3 rounded-lg border border-gray-300 dark:border-darkmode_400 bg-white dark:bg-darkmode_500 text-gray-800 dark:text-gray-100'
               placeholder='flat_earth42@gmail.com'
               value={formData.user_email}
               onChange={handleChange}
@@ -89,7 +89,7 @@ const Contact = () => {
               id='message'
               name='message'
               rows='6'
-              className='p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 h-32 md:h-48'
+              className='p-3 rounded-lg border border-gray-300 dark:border-darkmode_400 bg-white dark:bg-darkmode_500 text-gray-800 dark:text-gray-100 h-32 md:h-48'
               placeholder='Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise situation...'
               value={formData.message}
               onChange={handleChange}
